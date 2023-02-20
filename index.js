@@ -44,6 +44,31 @@ app.post('/knowledge', function (req, res) {
     res.send({ response: response });
   });
 
+function getKnowledge() {
+  // Get the selected topic and level
+  const topic = document.getElementById("topic").value;
+  const level = document.getElementById("level").value;
+
+  // Send a POST request to the API with the topic and level
+  fetch("/knowledge", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      topic: topic,
+      level: level,
+    }),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      // Display the response in the HTML
+      const responseElement = document.getElementById("response");
+      responseElement.innerHTML = data.response;
+    });
+}
+
+
 // Serve homepage
 app.get('', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
