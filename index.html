@@ -1,11 +1,31 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Flowershop</title>
-  </head>
-  <body>
-    <h2><strong>Fast Flowers API!</strong></h2>
-    <p>Your source for the most convienient flowers</p>
-    <p>Visit us in person or try our handy Flower Bot!</p>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Data Science API</title>
+</head>
+<body>
+  <h1>Data Science API</h1>
+  <form>
+    <label for="topic">Topic:</label>
+    <select name="topic" id="topic">
+      <option value="Data Engineering">Data Engineering</option>
+      <option value="Machine Learning">Machine Learning</option>
+      <option value="Data Visualization">Data Visualization</option>
+    </select><br>
+    <!-- <input type="text" name="topic" id="topic"><br> -->
+
+    <label for="level">Level:</label>
+    <select name="level" id="level">
+      <option value="Child">Child</option>
+      <option value="High School Student">High School Student</option>
+      <option value="College Student">College Student</option>
+      <option value="Expert">Expert</option>
+    </select><br>
+
+    <button type="button" onclick="getKnowledge()">Get Knowledge</button>
+  </form>
+  <p id="response"></p>
+  <script src="index.js"></script>
+</body>
 </html>
