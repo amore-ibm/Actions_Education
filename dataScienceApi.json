@@ -1,0 +1,56 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Data Science API",
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "https://application-ea.z63xav3pglr.us-east.codeengine.appdomain.cloud"
+    }
+  ],
+  "paths": {
+    "/knowledge": {
+      "post": {
+        "operationId": "getKnowledge",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "topic": {
+                    "type": "string",
+                    "enum": ["Data Engineering", "Machine Learning", "Data Visualization"]
+                  },
+                  "level": {
+                    "type": "string",
+                    "enum": ["Child", "High School Student", "College Student", "Expert"]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Response object containing knowledge for the given topic and level.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "response": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
